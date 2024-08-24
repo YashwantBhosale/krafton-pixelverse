@@ -453,6 +453,10 @@
             </div>
           </div>
         </div>
+        <div class="winning_criteria">
+          <h1>WINNING CRITERIA :</h1>
+          There will be 3 prizes awarded.
+        </div>
       </div>
     </section>
     <section>
@@ -593,25 +597,25 @@
     </script>
 
     <script>
-      document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
-      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-      window.addEventListener("scroll", () => {
-        const scrollPosition = window.scrollY;
-        const windowHeight = window.innerHeight;
+      // document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
+      // document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+      // window.addEventListener("scroll", () => {
+      //   const scrollPosition = window.scrollY;
+      //   const windowHeight = window.innerHeight;
 
-        // Calculate how far down the page the user has scrolled (0 to 1 range)
-        const scrollFraction =
-          scrollPosition / (document.body.scrollHeight - windowHeight);
+      //   // Calculate how far down the page the user has scrolled (0 to 1 range)
+      //   const scrollFraction =
+      //     scrollPosition / (document.body.scrollHeight - windowHeight);
 
-        if (scrollFraction > 0.15) {
-          document.body.style.backgroundImage =
-            "url('./assets/images/bg-maIN.jpg')";
-          document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-        } else {
-          document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
-          document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-        }
-      });
+      //   if (scrollFraction > 0.15) {
+      //     document.body.style.backgroundImage =
+      //       "url('./assets/images/bg-maIN.jpg')";
+      //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+      //   } else {
+      //     document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
+      //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+      //   }
+      // });
     </script>
     <script src="script.js"></script>
     <script type="module" src="cyburpunk_robo.js"></script>
