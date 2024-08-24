@@ -7,6 +7,31 @@
 body {
   font-family: "Roboto", sans-serif;
   color: #fff;
+  /* background-image: url("./assets/images/bg.jpg"); */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: overlay;
+  transition: background 1s ease-in-out, background-color 1s ease-in-out;
+}
+
+#bg-1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  mix-blend-mode: overlay;
+}
+
+@font-face {
+  font-family: "Forgotten Futurist";
+  src: url("./assets/fonts/forgotten-futurist.rg-regular.otf");
 }
 
 @font-face {
@@ -19,21 +44,42 @@ body {
   src: url("./assets/fonts/hemi\ head\ bd\ it.otf");
 }
 
+@font-face {
+  font-family: "InfiniteEnergy";
+  src: url("./assets/fonts/InfiniteEnergy-Eaxp8.ttf");
+}
+
+.section-text {
+  font-family: "Forgotten Futurist", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.title {
+  font-family: "InfiniteEnergy", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: lighter;
+  color: cyan;
+  margin: 20px 0;
+}
+
 .sponsor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .sponsor span {
-    font-size: 0.8rem;
-    font-family: "Hemi-head", sans-serif;
+  font-size: 0.8rem;
+  font-family: "Hemi-head", sans-serif;
 }
 
-.sponsor img{
-    max-width: 150px;
+.sponsor img {
+  max-width: 150px;
 }
 
 .techy-window {
@@ -61,19 +107,26 @@ body {
 .techy-window::after {
   border-bottom-right-radius: 10px;
 }
-
+section {
+  min-height: 100vh;
+  margin: 40px auto;
+}
 #vanta-canvas {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
   z-index: -1;
   width: 100%;
   height: 100vh;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(75deg);
+  display: none;
 }
 
 /*Glitch effect styles*/
 .glitch-text {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: bold;
   color: cyan;
   text-shadow: 0 0 5px cyan, 0 0 10px cyan;
@@ -100,13 +153,18 @@ body {
 }
 
 /* Hero section styles */
-
+.main {
+  display: flex;
+  justify-content: center;
+}
 .hero {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 60vh;
+  /* max-width: 500px; */
+  /* width: 40%; */
 }
 
 .hero p {
@@ -120,10 +178,10 @@ body {
 }
 
 /* Button */
-.btn-container{
-    display: flex;
-    gap: 15px;
-    margin: 15px auto;
+.btn-container {
+  display: flex;
+  gap: 15px;
+  margin: 15px auto;
 }
 :root {
   /*  change this for scaling  */
@@ -204,3 +262,57 @@ body {
   }
 }
 
+/* OBJECTIVE */
+
+.card {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  border: 1px solid cyan;
+  box-shadow: 0 8px 32px 0 rgba(0, 247, 255, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+}
+
+.structure-sub h1{
+  font-family: "Hemi-head", sans-serif;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.structure-sub p{
+  font-family: "Forgotten Futurist", sans-serif;
+  font-size: 1rem;
+  margin: 20px 0;
+}
+
+.rules {
+  width: 92%;
+  padding-bottom: 20px;
+}
+
+.rules li {
+  font-family: "Forgotten Futurist", sans-serif;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+  }
+}

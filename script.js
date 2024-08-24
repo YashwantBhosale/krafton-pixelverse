@@ -13,6 +13,8 @@ const vantaEffect = VANTA.WAVES({
   zoom: 1.1,
 });
 
+
+
 // Function to create a glitchy effect by varying the shininess
 function glitchShininess() {
   const minShininess = 15;
