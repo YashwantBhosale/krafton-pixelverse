@@ -11,20 +11,24 @@
       type="image/x-icon"
     />
     <style>
-      #container{
+      #container {
         width: 50%;
         background-color: black;
       }
+
+     
     </style>
   </head>
   <body>
+    <div id="preloader">
+      <div id="preloader-text"></div>
+    </div>
     <div id="vanta-canvas"></div>
     <div class="header">
       <img src="./assets/images/mslogo.png" alt="" />
     </div>
-    <section style="min-height: 100vh;">
+    <section style="min-height: 100vh">
       <div class="main">
- 
         <div class="hero">
           <div class="wrapper">
             <h1 class="glitch-text" id="glitch-text">PIXELVERSE</h1>
@@ -45,15 +49,14 @@
         </div>
       </div>
     </section>
-  </body>
-</html>
+
     <section id="objectives">
       <div class="objectives card">
         <h1 class="title">OBJECTIVES</h1>
         <p class="section-text">
           The objective of the event is to give budding game developers with
           brilliant skills a platform to showcase those skills in a competition
-          of game development.The participants will be given a theme on the
+          of game development. The participants will be given a theme on the
           basis of which they must make a playable video game in the given
           period of time under the moderation of the event organizers. The
           submissions made by the participants will be judged and three best
@@ -61,6 +64,7 @@
         </p>
       </div>
     </section>
+
     <section>
       <div class="card">
         <h1 class="title">STRUCTURE</h1>
@@ -68,10 +72,10 @@
           <div class="structure-sub">
             <h1>1. Idea Submission:</h1>
             <p>
-              The theme of the event will be disclosed 24-hours prior to the
-              start of the event.All competitors will consolidate their ideas in
-              those 24 hours will disclose their idea for the game during those
-              24 hours. <br />The participants are at liberty to interpret the
+              The theme of the event will be disclosed 24 hours prior to the
+              start of the event. All competitors will consolidate their ideas
+              in those 24 hours and will disclose their idea for the game during
+              those 24 hours. The participants are at liberty to interpret the
               theme however they like given their idea of the game aligns with
               the theme of the event.
             </p>
@@ -79,25 +83,25 @@
           <div class="structure-sub">
             <h1>2. The Competition</h1>
             <p>
-              The time period of the competition is 24 hours.Competitors are
+              The time period of the competition is 24 hours. Competitors are
               invited at a venue where they will be allowed to implement their
-              ideas under the supervision of the organizers.Players can use any
-              game engine of their choice to program, design and integrate to
-              shape their game idea.At the end of the 24-hours they must submit
-              their project to the organizers for evaluation.
+              ideas under the supervision of the organizers. Players can use any
+              game engine of their choice to program, design, and integrate to
+              shape their game idea. At the end of the 24 hours, they must
+              submit their project to the organizers for evaluation.
             </p>
           </div>
           <div class="structure-sub">
             <h1>3. Presentation Round:</h1>
             <p>
-              At the end of the 24-hour competition the participants must
+              At the end of the 24-hour competition, the participants must
               prepare a presentation on the features and capabilities of their
-              game and present it to our judges.The presentation must have all
+              game and present it to our judges. The presentation must have all
               the technologies and tools used to make the game, their idea
-              behind the game and how it suits the theme of the competition.The
-              submitted games will be judged based on the quality of the games
-              and the competitor’s presentation of it.The participants will also
-              be asked questions about their games by the judges
+              behind the game, and how it suits the theme of the competition.
+              The submitted games will be judged based on the quality of the
+              games and the competitor’s presentation of it. The participants
+              will also be asked questions about their games by the judges.
             </p>
           </div>
           <div class="structure-sub">
@@ -111,24 +115,88 @@
         </div>
       </div>
     </section>
+
     <section>
       <div class="card">
         <h1 class="title">RULES</h1>
         <div class="rules">
           <ol>
-            <li>The games should have a playtime of at least 20 minutes. Any never-ending games must have at least three different unique obstacle levels.</li>
-            <li>The use of AI tools like ChatGPT and royalty free art is allowed.</li>
-            <li>The use of commercial content or copying someone else’s work with or without permission is strictly prohibited. The source code will be checked through a plagiarism check.</li>
-            <li>The decision of the judges and the event heads will be final.</li>
+            <li>
+              The games should have a playtime of at least 20 minutes. Any
+              never-ending games must have at least three different unique
+              obstacle levels.
+            </li>
+            <li>
+              The use of AI tools like ChatGPT and royalty-free art is allowed.
+            </li>
+            <li>
+              The use of commercial content or copying someone else’s work with
+              or without permission is strictly prohibited. The source code will
+              be checked through a plagiarism check.
+            </li>
+            <li>
+              The decision of the judges and the event heads will be final.
+            </li>
             <li>Replacement of any participant is not allowed.</li>
-            <li>Competitors must bring their own devices and software necessary for the game development; they will be provided with only access to the internet and a power outlet to charge their devices.</li>
-            <li>It is compulsory for the competitors to keep updating the version control system repository every three hours of the competition; failure to do so will result in disqualification.</li>
+            <li>
+              Competitors must bring their own devices and software necessary
+              for the game development; they will be provided with only access
+              to the internet and a power outlet to charge their devices.
+            </li>
+            <li>
+              It is compulsory for the competitors to keep updating the version
+              control system repository every three hours of the competition;
+              failure to do so will result in disqualification.
+            </li>
           </ol>
-          <p>All details and explanations are included in the accompanying event handbook.</p>
-        </div>
+          <p>
+            All details and explanations are included in the accompanying event
+            handbook.
+          </p>
         </div>
       </div>
     </section>
+
+    <script>
+      const preloader = document.getElementById("preloader");
+      const preloaderText = document.getElementById("preloader-text");
+      const cursor = document.getElementById("cursor");
+      const content = document.getElementById("content");
+      const words = ["CREATE", "CODE", "CONQUER"];
+      let currentWordIndex = 0;
+      let currentLetterIndex = 0;
+
+      function typeWord() {
+        if (currentWordIndex < words.length) {
+          if (currentLetterIndex < words[currentWordIndex].length) {
+            preloaderText.textContent +=
+              words[currentWordIndex][currentLetterIndex];
+            currentLetterIndex++;
+            setTimeout(typeWord, 100); // Adjust typing speed here
+          } else {
+            currentLetterIndex = 0;
+            currentWordIndex++;
+            setTimeout(() => {
+              preloaderText.textContent = "";
+              typeWord();
+            }, 1000); // Pause between words
+          }
+        } else {
+          preloader.style.display = "none";
+          setTimeout(showMainContent, 500);
+        }
+      }
+
+      function showMainContent() {
+        document.getElementById("preloader").style.display = "none";
+        content.style.top = "0";
+      }
+
+      window.addEventListener("load", () => {
+        setTimeout(typeWord, 500);
+      });
+    </script>
+
     <script type="importmap">
       {
         "imports": {
@@ -137,31 +205,39 @@
         }
       }
     </script>
+
     <script>
-        document.body.style.backgroundImage = "url('./assets/images/bg-maIN.jpg')";
-        document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+      const images = [
+        "./assets/images/bg-maIN.jpg",
+        "./assets/images/bg.jpg",
+      ]
+      images.forEach((image) => {
+        new Image().src = image;
+      });
+      document.body.style.backgroundImage =
+        "url('./assets/images/bg-maIN.jpg')";
+      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
       window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY;
-  const windowHeight = window.innerHeight;
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
 
-  // Calculate how far down the page the user has scrolled (0 to 1 range)
-  const scrollFraction = scrollPosition / (document.body.scrollHeight - windowHeight);
+        // Calculate how far down the page the user has scrolled (0 to 1 range)
+        const scrollFraction =
+          scrollPosition / (document.body.scrollHeight - windowHeight);
 
-  if (scrollFraction > 0.15) {
-    document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
-    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-  } else {
-    document.body.style.backgroundImage = "url('./assets/images/bg-maIN.jpg')";
-    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-  }
-});
+        if (scrollFraction > 0.15) {
+          document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
+          document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+        } else {
+          document.body.style.backgroundImage =
+            "url('./assets/images/bg-maIN.jpg')";
+          document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+        }
+      });
     </script>
-    <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
-    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-    <script src="script.js"></script>
-    <!-- <script type="module" src="cyburpunk_robo.js"></script> -->
+    <script src="vanta.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js"></script>
   </body>
 </html>
