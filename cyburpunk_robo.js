@@ -69,11 +69,11 @@ const hologramShaderMaterial = new THREE.ShaderMaterial({
 const loader = new GLTFLoader();
 let mixer, model;
 loader.load(
-  "./assets/model/earth_hologram.glb",
+  "./assets/models/arcane_jester_black_x-suit_3d_model/scene.gltf",
   function (gltf) {
     model = gltf.scene;
     model.scale.set(1, 1, 1);
-    model.position.y = 2; // Adjusted to 0 for better visibility
+    model.position.y = 1.06; // Adjusted to 0 for better visibility
 
     // Ensure textures load with proper filtering
     model.traverse(function (node) {
@@ -94,7 +94,7 @@ loader.load(
     action.play();
 
     // Camera positioning
-    camera.position.z = 8;
+    camera.position.z = 5;
     camera.position.y = 2; // Slightly raised camera position
 
     // Render loop

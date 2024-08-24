@@ -1,17 +1,17 @@
-const vantaEffect = VANTA.WAVES({
-  el: "#vanta-canvas",
-  mouseControls: false,
-  touchControls: false,
-  gyroControls: false,
-  minHeight: 200.0,
-  minWidth: 200.0,
-  scale: 1,
-  scaleMobile: 1.0,
-  color: 0x00001,
-  shininess: 10.0,
-  waveHeight: 6.5,
-  zoom: 1.1,
-});
+// const vantaEffect = VANTA.WAVES({
+//   el: "#vanta-canvas",
+//   mouseControls: false,
+//   touchControls: false,
+//   gyroControls: false,
+//   minHeight: 200.0,
+//   minWidth: 200.0,
+//   scale: 1,
+//   scaleMobile: 1.0,
+//   color: 0x00001,
+//   shininess: 10.0,
+//   waveHeight: 6.5,
+//   zoom: 1.1,
+// });
 
 
 
