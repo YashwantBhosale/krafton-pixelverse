@@ -17,12 +17,12 @@
         position: relative;
       }
       #container img {
-        width: 40%;
+        width: 50%;
         position: absolute;
         bottom: 0;
         height: auto;
         left: 50%;
-        transform: translateX(13%) translateY(-26px);
+        transform: translateX(-20%) translateY(-26px);
         z-index: -1;
       }
     </style>
@@ -32,14 +32,14 @@
       <div id="preloader-text"></div>
     </div>
     <div id="vanta-canvas"></div>
-    
+
     <div class="header">
       <img src="./assets/images/mslogo.png" alt="" />
     </div>
     <section style="min-height: 100vh">
       <div class="main">
         <div id="container">
-          <img src="./assets/images/stage.png" alt="">
+          <img src="./assets/images/stage.png" alt="" />
         </div>
         <div class="hero">
           <div class="wrapper">
@@ -253,26 +253,25 @@
     </script>
 
     <script>
-      // document.body.style.backgroundImage =
-      //   "url('./assets/images/bg-maIN.jpg')";
-      // document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-      // window.addEventListener("scroll", () => {
-      //   const scrollPosition = window.scrollY;
-      //   const windowHeight = window.innerHeight;
+      document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
+      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+      window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
 
-      //   // Calculate how far down the page the user has scrolled (0 to 1 range)
-      //   const scrollFraction =
-      //     scrollPosition / (document.body.scrollHeight - windowHeight);
+        // Calculate how far down the page the user has scrolled (0 to 1 range)
+        const scrollFraction =
+          scrollPosition / (document.body.scrollHeight - windowHeight);
 
-      //   if (scrollFraction > 0.15) {
-      //     document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
-      //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-      //   } else {
-      //     document.body.style.backgroundImage =
-      //       "url('./assets/images/bg-maIN.jpg')";
-      //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-      //   }
-      // });
+        if (scrollFraction > 0.15) {
+          document.body.style.backgroundImage =
+            "url('./assets/images/bg-maIN.jpg')";
+          document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+        } else {
+          document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
+          document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+        }
+      });
     </script>
     <script src="vanta.js"></script>
     <script src="script.js"></script>
