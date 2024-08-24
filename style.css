@@ -253,7 +253,7 @@ section {
 .button {
   border: calc(0.08 * var(--m)) solid transparent;
   position: relative;
-  color: #f3f3f3;
+  color: white;
   font-family: "Hemi-head", sans-serif;
   font-size: var(--m);
   border-radius: calc(0.7 * var(--m));
@@ -653,6 +653,7 @@ section {
 .accordion__faq button .accordion-title__faq {
   padding: 1em 1.5em 1em 0;
   font-family: "Outfit", sans-serif;
+  color: white;
 }
 
 .accordion__faq button .icon__faq {
@@ -717,4 +718,13 @@ section {
       min-width: 100px;
       font-size: smaller;
     }
+}
+.winning_criteria {
+  margin: 15px auto;
+  padding: 10px;
+  font-family: "Outfit", sans-serif;
+}
+
+.winning_criteria > *{
+  margin: 10px 0;
 }
