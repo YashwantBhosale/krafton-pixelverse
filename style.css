@@ -755,6 +755,9 @@ section {
       min-width: 100px;
       font-size: smaller;
     }
+    .glitch-text {
+      font-size: 2rem;
+    }
 }
 .winning_criteria {
   margin: 15px auto;
