@@ -15,8 +15,6 @@
         width: 50%;
         background-color: black;
       }
-
-     
     </style>
   </head>
   <body>
@@ -149,7 +147,7 @@
               failure to do so will result in disqualification.
             </li>
           </ol>
-          <p>
+          <p class="section-text" style="text-align: left">
             All details and explanations are included in the accompanying event
             handbook.
           </p>
@@ -165,13 +163,13 @@
       const words = ["CREATE", "CODE", "CONQUER"];
       let currentWordIndex = 0;
       let currentLetterIndex = 0;
-      const images = [
-        "./assets/images/bg-maIN.jpg",
-        "./assets/images/bg.jpg",
-      ]
+      const images = ["./assets/images/bg-maIN.jpg", "./assets/images/bg.jpg"];
+
+      // Preload images
       images.forEach((image) => {
         new Image().src = image;
       });
+
       function typeWord() {
         if (currentWordIndex < words.length) {
           if (currentLetterIndex < words[currentWordIndex].length) {
@@ -188,14 +186,42 @@
             }, 1000); // Pause between words
           }
         } else {
-          preloader.style.display = "none";
-          setTimeout(showMainContent, 500);
+          showMainContent();
         }
       }
 
       function showMainContent() {
-        document.getElementById("preloader").style.display = "none";
+        // Hide preloader
+        preloader.style.display = "none";
+
+        // Display the main content
         content.style.top = "0";
+
+        // Glitch text animation
+        const glitchText = document.getElementById("glitch-text");
+        const textContent = glitchText.textContent;
+        glitchText.innerHTML = "";
+
+        // Split the text into individual span elements
+        textContent.split("").forEach((char) => {
+          const span = document.createElement("span");
+          span.classList.add("glitch-char");
+          span.textContent = char;
+          glitchText.appendChild(span);
+        });
+
+        const glitchChars = document.querySelectorAll(".glitch-char");
+
+        function randomizeOpacity() {
+          glitchChars.forEach((char) => {
+            char.style.opacity = Math.random(); // Random opacity for each character
+            setTimeout(() => {
+              char.style.opacity = 1; // Settle to full opacity after random time
+            }, Math.random() * 2000); // Random delay before settling
+          });
+        }
+
+        randomizeOpacity();
       }
 
       window.addEventListener("load", () => {
@@ -213,7 +239,6 @@
     </script>
 
     <script>
-
       document.body.style.backgroundImage =
         "url('./assets/images/bg-maIN.jpg')";
       document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
