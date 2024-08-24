@@ -622,7 +622,6 @@ section {
 .accordion__faq .accordion-item__faq button[aria-expanded='true'] {
   border-bottom: 1px solid #03b5d2;
 }
-
 .accordion__faq button {
   position: relative;
   display: block;
@@ -643,15 +642,8 @@ section {
   color: #03b5d2;
 }
 
-.accordion__faq button:hover::after,
-.accordion__faq button:focus::after {
-  cursor: pointer;
-  color: #03b5d2;
-  border: 1px solid #03b5d2;
-}
-
 .accordion__faq button .accordion-title__faq {
-  padding: 1em 1.5em 1em 0;
+  padding: 1em 2.5em 1em 0; /* Added more padding for spacing */
   font-family: "Outfit", sans-serif;
   color: white;
 }
@@ -659,34 +651,57 @@ section {
 .accordion__faq button .icon__faq {
   display: inline-block;
   position: absolute;
-  top: 18px;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  border: 1px solid;
-  border-radius: 22px;
+  top: 50%;
+  right: 1em; /* Adjusted for better spacing */
+  width: 20px;
+  height: 20px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  transform: translateY(-50%);
 }
 
-.accordion__faq button .icon__faq::before {
-  display: block;
-  position: absolute;
-  content: '';
-  top: 9px;
-  left: 5px;
-  width: 10px;
-  height: 2px;
-  background: currentColor;
-}
+.accordion__faq button .icon__faq::before,
 .accordion__faq button .icon__faq::after {
-  display: block;
-  position: absolute;
   content: '';
-  top: 5px;
-  left: 9px;
-  width: 2px;
-  height: 10px;
+  position: absolute;
   background: currentColor;
+  width: 60%; /* Ensures symmetry */
+  height: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.accordion__faq button .icon__faq::after {
+  width: 2px;
+  height: 60%; /* Ensures symmetry */
+}
+
+.accordion__faq button[aria-expanded='true'] .icon__faq::after {
+  display: none;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+  .accordion__faq button .accordion-title__faq {
+    font-size: 1rem;
+  }
+
+  .accordion__faq button .icon__faq {
+    width: 18px;
+    height: 18px;
+  }
+
+  .accordion__faq button .icon__faq::before,
+  .accordion__faq button .icon__faq::after {
+    width: 60%; /* Ensures the plus sign is symmetrical */
+  }
+
+  .accordion__faq button .icon__faq::after {
+    height: 60%;
+  }
+}
+
 
 .accordion__faq button[aria-expanded='true'] {
   color: #03b5d2;
