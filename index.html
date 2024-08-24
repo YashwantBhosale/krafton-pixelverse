@@ -129,7 +129,9 @@
           <a href="/genius-junior" class="link">Genius Junior</a>
         </li>
         <li class="item"><a href="/paakhi" class="link">Paakhi</a></li>
-        <li class="item"><a href="/hackathon" class="link">Hackathon 8.0</a></li>
+        <li class="item">
+          <a href="/hackathon" class="link">Hackathon 8.0</a>
+        </li>
         <li class="item">
           <a href="/pixelverse" class="link">KRAFTON Pixelverse</a>
         </li>
@@ -144,7 +146,6 @@
         <li class="item"><a href="/workshops" class="link">Workshops</a></li>
       </ul>
     </nav>
-
 
     <div id="preloader">
       <div id="bg-container">
@@ -195,7 +196,7 @@
           </p>
           <div class="btn-container">
             <button class="button">REGISTER</button>
-            <a href="#objectives"><button class="button">EXPLORE</button></a>
+            <button class="button" id="share">SHARE</button>
           </div>
         </div>
       </div>
@@ -557,8 +558,12 @@
       </div>
     </section>
     <footer>
-      <h3 style="width: 90%; margin: auto;">MODEL CREDITS:</h3>
-      <p style="width: 90%; margin: auto;">"Arcane Jester black X-suit 3D model" (https://skfb.ly/oGpWS) by YT-XTREMENINJA is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</p> 
+      <h3 style="width: 90%; margin: auto">MODEL CREDITS:</h3>
+      <p style="width: 90%; margin: auto">
+        "Arcane Jester black X-suit 3D model" (https://skfb.ly/oGpWS) by
+        YT-XTREMENINJA is licensed under Creative Commons Attribution
+        (http://creativecommons.org/licenses/by/4.0/).
+      </p>
     </footer>
     <!-- </div> -->
 
@@ -630,6 +635,29 @@
           setTimeout(() => {
             typeWord();
           }, 500);
+        });
+        const shareButton = document.getElementById("share");
+
+        shareButton.addEventListener("click", function () {
+          // Get the current page's URL
+          const link = window.location.href;
+
+          // Copy the link to the clipboard
+          navigator.clipboard
+            .writeText(link)
+            .then(() => {
+              // Change the button text to "Link Copied!"
+              const originalText = shareButton.textContent;
+              shareButton.textContent = "Link Copied!";
+
+              // Change the text back to the original after 2 seconds
+              setTimeout(() => {
+                shareButton.textContent = originalText;
+              }, 2000);
+            })
+            .catch((err) => {
+              console.error("Failed to copy: ", err);
+            });
         });
       });
     </script>
