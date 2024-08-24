@@ -73,7 +73,8 @@ loader.load(
   function (gltf) {
     model = gltf.scene;
     model.scale.set(1, 1, 1);
-    model.position.y = 1.06; // Adjusted to 0 for better visibility
+    model.position.y = 1.06;
+    model.position.x = 0.5 // Adjusted to 0 for better visibility
 
     // Ensure textures load with proper filtering
     model.traverse(function (node) {
