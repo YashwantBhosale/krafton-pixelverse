@@ -711,3 +711,10 @@ section {
   font-weight: 300;
   margin: 2em 0;
 }
+
+@media screen and (max-width: 500px) {
+    .button{
+      min-width: 100px;
+      font-size: smaller;
+    }
+}
