@@ -108,7 +108,7 @@ body {
   border-bottom-right-radius: 10px;
 }
 section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   margin: 40px auto;
 }
 #vanta-canvas {
