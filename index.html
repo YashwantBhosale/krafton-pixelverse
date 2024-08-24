@@ -165,7 +165,13 @@
       const words = ["CREATE", "CODE", "CONQUER"];
       let currentWordIndex = 0;
       let currentLetterIndex = 0;
-
+      const images = [
+        "./assets/images/bg-maIN.jpg",
+        "./assets/images/bg.jpg",
+      ]
+      images.forEach((image) => {
+        new Image().src = image;
+      });
       function typeWord() {
         if (currentWordIndex < words.length) {
           if (currentLetterIndex < words[currentWordIndex].length) {
@@ -207,13 +213,7 @@
     </script>
 
     <script>
-      const images = [
-        "./assets/images/bg-maIN.jpg",
-        "./assets/images/bg.jpg",
-      ]
-      images.forEach((image) => {
-        new Image().src = image;
-      });
+
       document.body.style.backgroundImage =
         "url('./assets/images/bg-maIN.jpg')";
       document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
