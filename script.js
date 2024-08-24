@@ -57,6 +57,31 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   randomizeOpacity();
+  const sections = document.querySelectorAll("section");
+  let lastVisibleSection = null;
+
+  const observerOptions = {
+    threshold: 0.45, // Trigger when 10% of the section is visible
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (lastVisibleSection && lastVisibleSection !== entry.target) {
+          lastVisibleSection.classList.remove("visible");
+          lastVisibleSection.classList.add("hidden");
+        }
+        
+        entry.target.classList.remove("hidden");
+        entry.target.classList.add("visible");
+        lastVisibleSection = entry.target; // Update the last visible section
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 });
 
 const items__faq = document.querySelectorAll(".accordion__faq button");
