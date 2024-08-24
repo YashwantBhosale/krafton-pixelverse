@@ -643,9 +643,11 @@ section {
 }
 
 .accordion__faq button .accordion-title__faq {
-  padding: 1em 2.5em 1em 0; /* Added more padding for spacing */
+  /* padding: 1em 2.5em 1em 0; Added more padding for spacing */
   font-family: "Outfit", sans-serif;
   color: white;
+  max-width: 90%;
+  display: block;
 }
 
 .accordion__faq button .icon__faq {
@@ -738,6 +740,7 @@ section {
   margin: 15px auto;
   padding: 10px;
   font-family: "Outfit", sans-serif;
+  width: 100%;
 }
 
 .winning_criteria > *{
