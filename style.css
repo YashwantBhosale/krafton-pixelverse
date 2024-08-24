@@ -713,7 +713,7 @@ section {
 }
 .accordion__faq button[aria-expanded='true'] + .accordion-content__faq {
   opacity: 1;
-  max-height: 9em;
+  max-height: fit-content;
   transition: all 200ms linear;
   will-change: opacity, max-height;
 }
