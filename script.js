@@ -25,14 +25,14 @@ function glitchShininess() {
     Math.random() * (maxShininess - minShininess) + minShininess;
 
   // Apply the new shininess value to the VANTA effect
-  vantaEffect.setOptions({ shininess: randomShininess });
+  // vantaEffect.setOptions({ shininess: randomShininess });
 
   // Schedule the next glitch effect
   setTimeout(glitchShininess, Math.random() * 300); // Random interval between glitches
 }
 
 // Start the glitch effect loop
-glitchShininess();
+// glitchShininess();
 
 
 document.addEventListener("DOMContentLoaded", function() {
