@@ -590,8 +590,6 @@
         const bgCreate = document.getElementById("bg-create");
         const bgCode = document.getElementById("bg-code");
         const bgConquer = document.getElementById("bg-conquer");
-        // const content = document.getElementById("content");
-        // content.style.display = "none"; // Hide main content initially
         const words = ["CREATE", "CODE", "CONQUER"];
         const bgImages = [bgCreate, bgCode, bgConquer];
         let currentWordIndex = 0;
@@ -638,10 +636,8 @@
           preloader.style.transform = "translateY(-100%)";
           setTimeout(() => {
             preloader.style.display = "none";
-            // content.style.display = "block";
             document.body.style.overflow = "auto"; // Re-enable scrolling after preloader
           }, 500);
-          // content.style.display = "block";
           document.body.style.overflow = "auto"; // Re-enable scrolling after preloader
         }
 
@@ -655,18 +651,14 @@
         const shareButton = document.getElementById("share");
 
         shareButton.addEventListener("click", function () {
-          // Get the current page's URL
           const link = window.location.href;
 
-          // Copy the link to the clipboard
           navigator.clipboard
             .writeText(link)
             .then(() => {
-              // Change the button text to "Link Copied!"
               const originalText = shareButton.textContent;
               shareButton.textContent = "Link Copied!";
 
-              // Change the text back to the original after 2 seconds
               setTimeout(() => {
                 shareButton.textContent = originalText;
               }, 2000);
@@ -685,28 +677,6 @@
           "three/examples/jsm/loaders/GLTFLoader": "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/jsm/loaders/GLTFLoader.js"
         }
       }
-    </script>
-
-    <script>
-      // document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
-      // document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-      // window.addEventListener("scroll", () => {
-      //   const scrollPosition = window.scrollY;
-      //   const windowHeight = window.innerHeight;
-
-      //   // Calculate how far down the page the user has scrolled (0 to 1 range)
-      //   const scrollFraction =
-      //     scrollPosition / (document.body.scrollHeight - windowHeight);
-
-      //   if (scrollFraction > 0.15) {
-      //     document.body.style.backgroundImage =
-      //       "url('./assets/images/bg-maIN.jpg')";
-      //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-      //   } else {
-      //     document.body.style.backgroundImage = "url('./assets/images/bg.jpg')";
-      //     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
-      //   }
-      // });
     </script>
     <script src="script.js"></script>
     <script type="module" src="cyburpunk_robo.js"></script>
